@@ -1,0 +1,75 @@
+/* .home-projects {
+    display: grid;
+    grid-template-columns: [first] 240px [col2] 240px [col3] 240px [col4] 240px [col5] 240px [col6] 240px [col7] 240px [col8] 220px [end];
+    grid-template-rows: [first] 135px [row2] 135px [row3] 135px [row4] 135px [row5] 135px [row6] 135px [row7] 135px [row8] 135px [end];
+    height: 95vh;
+
+    &__project-1 {
+        grid-column: first / col4;
+        grid-row: first / row4;
+    }
+
+    &__project-2 {
+        grid-column: col5 / col6;
+        grid-row: first / row2;
+    }
+
+    &__project-3 {
+        grid-column: col5 / col6;
+        grid-row: row3 / row4;
+    }
+
+    &__project-4 {
+        grid-column: col7 / end;
+        grid-row: first / row2;
+    }
+
+    &__project-5 {
+        grid-column: col7 / end;
+        grid-row: row3 / row4;
+    }
+
+    &__project-6 {
+        grid-column: first / col4;
+        grid-row: row5 / end;
+    }
+
+    &__project-7 {
+        grid-column: col5 /col6;
+        grid-row: row5 / end;
+    }
+
+    &__project-8 {
+        grid-column: col7 / end;
+        grid-row: row5 / end;
+    }
+}
+ */
+
+
+ .home-projects {
+    background-color: $color-white;
+    grid-column: full-start / full-end;
+
+     &__rows {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+        justify-content: center;
+    }
+
+    &__column {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+    &__column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+ }

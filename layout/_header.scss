@@ -1,0 +1,113 @@
+.sidebar {
+    background-color: $color-dark-grey-3;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.nav-btn {
+    border: none;
+    border-radius: 0;
+
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 50vh;
+  
+    &::before,
+    &::after {
+        background-color: #fff;
+        height: 2px;
+        width: 4.5rem;
+        content: "";
+        display: block;
+    }
+
+    &::before { transform: translateY(-1.5rem); }
+    &::after { transform: translateY(1.3rem); }
+
+    @media only screen and (max-width: $bp-large) {
+        margin-top: 0;
+        margin-right: 3rem;
+
+        &::before { transform: translateY(-1.2rem); }
+        &::after { transform: translateY(1rem); }
+    }
+}
+.header {
+    height: 85vh;
+    background-image: linear-gradient(to right bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)),
+        url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+   /*  background-color: $color-grey-dark-1; */
+    /* grid-column: full-start / full-end; */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center; */
+    /* padding: 8rem;
+    padding-top: 4rem; */
+    grid-column: full-start / full-end;
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-row-gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+        height: 100vh;
+    }
+    
+    &__text-box {
+        color: $color-white;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        margin-left: 35.5rem;
+        margin-top: 19rem;
+
+        @media only screen and (max-width: $bp-large) {
+            margin-left: 2.5rem; 
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 3.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__date {
+        font-size: 2.4rem;
+        font-weight: 300;
+        margin-top: -1.6rem;
+    }
+
+    &__description {
+        width: 68.3rem;
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-top: 3.6rem;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 90%;
+        }
+    }
+
+    &__button {
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+    }
+}

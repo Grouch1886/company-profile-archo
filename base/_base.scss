@@ -1,0 +1,72 @@
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 12000px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* 10px -> Why? -> easy to calculate */
+
+    // This will not apply
+    /* @include respond(phone) {
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    } */
+ 
+/*     @include respond (tab-land) { // Width < 1200?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 55.25%
+    }
+
+    @include respond(tab-port) { // Width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond (big-desktop) {
+        font-size: 75%; // 1rem = 12, 12/16
+    } */
+}
+
+body {
+    box-sizing: border-box;
+    /* padding: 3rem; */
+    
+   /*  font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6; */
+
+   /*  @include respond (tab-port) { 
+       padding: 0;
+    } */
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 
+    minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem)[col-end]) 
+    [center-end] minmax(6rem, 1fr) [full-end]; 
+    // apprx 1200(px)/8
+    // Use minmax function in full-bleed becase we always have the margin between the full-bleed & the center.
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows:6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] 
+        repeat(8, [col-start] minmax(min-content, 14rem)[col-end]) 
+        [center-end] minmax(6rem, 1fr) [full-end]; 
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows:6rem calc(100vh - 6rem); // Because the rest of the rows are min-content, hence we just need 
+        // to remove it, and the algorithm auto placement will do the job.
+    }
+}

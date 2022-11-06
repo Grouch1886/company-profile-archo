@@ -1,0 +1,103 @@
+.home-profile {
+    grid-column: full-start / full-end;
+    display: grid;
+    /* grid-template-columns: [first] 150px [line2] 150px [line3] auto [col4-start] 50px [five] 40px [end]; */
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+
+    height: 85vh;
+
+    background-color: #D6B02A;
+
+    @media only screen and (max-width: $bp-small) {
+        height: max-content;
+    }
+
+    &__text {
+        grid-row: row1-start / last-line;
+
+        /* display: grid;
+        grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: 600px 1fr 600px; */ 
+        // apprx 1200(px)/8
+        // Use minmax function in full-bleed becase we always have the margin between the full-bleed & the center.
+        
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        margin-top: 2rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-top: 0;
+        }
+
+    }
+
+    &__text-tittle {
+        font-size: 3.6rem;
+        /* grid-column: col3 / col8;
+        grid-row: row2 / row3; */
+        margin-top: 12rem;
+        margin-left: 35.5rem;
+        @media only screen and (max-width: $bp-small) {
+            margin-left: 1.5rem;   
+            width: 90%;
+        }
+    }
+
+    &__text-paragraph {
+        font-size: 1.8rem;
+        /* grid-column: col3 / col8;
+        grid-row: row3 / row4; */
+        width: 915px;
+        margin-left: 35.5rem;
+        margin-top: 1rem;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 360px;
+            margin-left: 1.5rem;   
+        }
+    }
+
+    &__button {
+        font-size: 1.6rem;
+        /* grid-column: col3 / col8;
+        grid-row: row4 / row5;
+        */
+        margin-left: 35.5rem;
+        margin-top: 1.5rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-left: 1.5rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__images {
+        display: flex;
+        flex-wrap: nowrap;
+        //width: 1708px;
+        height: 220px;
+        justify-content: center;
+        margin-top: -4rem;
+
+        @media only screen and (max-width: $bp-small) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            height: max-content;
+            margin-top: 4rem;
+        }
+    }
+
+    &__img-1 {
+        margin: 1.5rem;
+    }
+
+    &__img-2 {
+        margin: 1.5rem;
+    }
+
+    &__img-3 {
+        margin: 1.5rem;
+    }
+}
